@@ -1,0 +1,43 @@
+body {
+	padding:30px;
+	/*background-image: url("assets/images/background.png")*/
+}
+.title {
+	background-color: white;
+}
+.row {
+	background-color: white;
+}
+.jumbotron {
+	margin-top:30px;
+	text-align: center;
+	background-color: #163870 !important;
+	color: white !important;
+}
+
+.container {
+	background-color: white;
+}	
+
+/*
+
+element.style {
+    margin-top: 30px;
+}
+
+ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    margin-left: 1em;
+}
+p:hover {
+	background-color: yellow;
+}
+h2 {
+	margin: 1px !important;
+}
+
+*/

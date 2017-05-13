@@ -6,13 +6,36 @@
 	<link rel="stylesheet" href="assets/css/style.css" />
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
+<title>NY Times Search</title>
 	<div class="container">
-		
+
+		<div class="jumbotron vertical-center">
+		<span id="title" class="row"><h1><i class="fa fa-newspaper-o" aria-hidden="true"></i> New York Times Search</h1></span>
+		</div>
+
+		<span id="searchParam" class="row"><h2><i class="fa fa-list-alt" aria-hidden="true"></i> Search Parameters</h2></span>
+
+		<div id="inputs" class="row">
+		<label>Search Term: </label><input type="text" name="input1" id="a1" value="a1" ><br>
+  		<label>Start Year: <input type="text" name="input2" id="a2" value="a2" ></label><br>
+    	<label>End Year: <input type="text" name="input3" id="a3" value="a3" ></label><br>
+
+  		<button type="button" id="search" class="btn btn-primary">Search</button>
+
+  		<div id="articles"></div>
+</div>	
 	</div>
+
+			
+	
+	<div>
+
 
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>	
 	<script type="text/javascript" src="assets/javascript/javascript.js"></script>
+	<script src="https://use.fontawesome.com/c14e5e9647.js"></script>
 </body>
 </html>
