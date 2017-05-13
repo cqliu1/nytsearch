@@ -1,13 +1,17 @@
 $(document).ready(function() {
-	$("#search").on("click", function() { // update selector
+
+	$("#search").on("click", function(event) { // update selector
+		event.preventDefault();
 		// variables for search terms
-		var searchTerm = "dogs";
-		// var numRecords = "10";
-		var beginYear = "2006"; // change this
+		var searchTerm = $("#searchTerm").val();
+		console.log(searchTerm);
+		var beginYear = "2000";
+		var beginYear = $("#start-year").val();
 		var beginDate = beginYear + "0101";
-		var endYear = "2010";	// change this
+		console.log(beginDate);
+		var endYear = $("#end-year").val();
 		var endDate = endYear + "1231";
-		// var pageNum = 0;
+		console.log(endDate);
 		var apiKey = "28113ce5fb89464bacc496acee5ff93f";
 
 		// API search URL
@@ -51,4 +55,5 @@ $(document).ready(function() {
 			}
 		});
 	});
+
 });
