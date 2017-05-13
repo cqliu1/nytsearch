@@ -1,21 +1,21 @@
-$(document)ready(function() {
-	$("something").on("click", function() { // update selector
+$(document).ready(function() {
+	$("#search").on("click", function() { // update selector
 		// variables for search terms
-		var searchTerm = "";
-		var numRecords = "";
-		var beginYear = ""; // change this
-		var beginDate = beginDate + "0101";
-		var endYear = "";	// change this
+		var searchTerm = "dogs";
+		// var numRecords = "10";
+		var beginYear = "2006"; // change this
+		var beginDate = beginYear + "0101";
+		var endYear = "2010";	// change this
 		var endDate = endYear + "1231";
-		var pageNum = 0;
+		// var pageNum = 0;
 		var apiKey = "28113ce5fb89464bacc496acee5ff93f";
 
 		// API search URL
 		var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=" + searchTerm 
-						+ "&page=" + pageNum 
+						// + "&page=" + pageNum 
 						+ "&begin_date=" + beginDate
 						+ "&end_date=" + endDate
-						+ "&api_key" + apiKey;
+						+ "&api_key=" + apiKey;
 
 		// ajax request to nytimes
 		$.ajax({
@@ -25,7 +25,7 @@ $(document)ready(function() {
 			console.log(response);
 
 			// clear previous results
-			$("something").empty();
+			$("#articles").empty();
 
 			var results = response.response.docs;
 
@@ -37,16 +37,18 @@ $(document)ready(function() {
 				var title = results[i].headline.main;
 				var pubDate = results[i].pub_date;
 				var author = results[i].byline.original;
+				var section = results[i].section_name;
 				var articleURL = results[i].web_url;
 
 				var articleDiv = $("<div>").addClass("article");
 				articleDiv.append("<h2>" + title + "</h2>");
-				articleDiv.append("<em> Publication Date: " + pubDate + " Author: " + author + "</em>");
-				articleDiv.append("<a href='" + articleURL + "'>" + articleURL + "</a>");
+				articleDiv.append("<p>" + author + "");
+				articleDiv.append("<p><em> Publication Date: " + pubDate + "</em></p>");
+				articleDiv.append("<p> Section: " + section + "</p>");
+				articleDiv.append("<p><a href='" + articleURL + "'>" + articleURL + "</a></p>");
 
-				$("something").append(articleDiv);
+				$("#articles").append(articleDiv);
 			}
 		});
-
 	});
 });
